@@ -1,0 +1,82 @@
+/* CPU and main memory
+    program runs = (stack+method area)(lies inside) // heap , network , computers, file etc
+    they remain outside the program (resource data will come from here)
+    so this is how data is tranferred and communicated
+
+    buffers: but it may happen that we are sending the data at very fast rate and one receving the data is
+    at lower rate than there we use buffer, so java program will put them into buffer and later
+    other resource may be receving it later in buffer(very important element of string )
+
+    how data is send?
+    data is not send completely at once it is first broken into pieces and then send as different number of bytes
+    for eg: if u want to send the name "john" so it will be send as "j" "o","h", "n" separately
+
+    what java have for stream,means for transferring of data ?
+    broadly java provides two types of stream classes
+
+    byte stream (as data flow in byte)
+    input stream
+    output stream
+
+    character stream (as data flow in form of char) and size of char is different
+    reader
+    writer
+
+*/
+/*  class for inputstream and its functions
+
+    Program  data <----- resource (this is called inputstream)
+
+    int read() it will read just one byte , once u have read the data now it is not in your stream
+             it is their in your program now , if it is reached the end of the data then it will return -1,
+             at one time only a will leave , then b and then so on
+
+    int read(byte[] b) let's suppose in your program u have b array of five then at a 5 char will be taken from
+            the program , in this abced all 5 character will be read at once
+
+    int read(byte[] b, int off, int len) in this we can send from which index we want to read , and till which
+            length we want to read
+
+    int available() this method will tell u how many bits of data is available
+
+    int skip(long n) if u want to skip the how many bit u want to take inside
+    if u donot want the data u have take from the file to be removed from that file than u can use the following
+    functions below
+
+    int mark (int limit)  .. by this we can mark, and in limit u can set till how many limit that mark should be valid
+    u can put the mark on the that later which u have read ,and continue putting the mark
+
+    int reset()
+    by using this we can reset and come back to the same mark
+
+   boolean  marksupported() .. every stream is not mark supported for ex buffer string can support mark , so we
+          need to check which support the mark or not
+
+   void close  after access the resource we need to close that resource , as stream is like a resource
+
+
+
+OUTPUT STREAM
+program ---> data (resource)
+
+void write(int b) this write will just write one byte
+void write(byte[] b) let's suppose in the program it is the byte array and  in that we want to write all the byte
+     together than use this
+
+void write(byte[],int off,int len)  .. same as the input stream
+
+void flush() .. this is used in buffer, buffer is the tempopary memory object // this is forcing the data from buffer to resource
+
+void close() .. first if u have finished using the output stream u can close
+
+
+
+
+
+ */
+
+// program to understand the file input and output stream
+// we have a java file so by using the fileoutputstream fos we will take input of data in file
+// and by using the fileinputstream fis we will take output of data in the file
+// same way we can use filereader and filewriter
+// we need to import the package
