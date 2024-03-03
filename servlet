@@ -1,0 +1,20 @@
+servlet is simple java program that runs on server and capable of handling request 
+and generating dynamic response
+            _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  _  _  _ _                db 
+           /               request                   \            /
+         /                                            \         /jdbc
+www.onlyjavatech.com                                          /
+ chrome , firefox                                    JAVA PROGRAM (servlet)
+ ( CLIENT  )                                          ( SERVER)
+     \                                        .dynamic web page request 
+      \                                                 /
+       \   _ _ _    _  _  _    _  _    _     _    _    /                                            
+
+so that java program which is excuted on server is called as servlet , this is base of spring and 
+spring boot frame work
+
+their is many server for java like tomcat . but java technology servlet is independent of server 
+so we can use any server we want 
+
+
+
