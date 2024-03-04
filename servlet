@@ -4,11 +4,12 @@ and generating dynamic response
            /               request                   \            /
          /                                            \         /jdbc
 www.onlyjavatech.com                                          /
- chrome , firefox                                    JAVA PROGRAM (servlet)
- ( CLIENT  )                                          ( SERVER)
+ chrome , firefox                                    JAVA PROGRAM (servlet) so this java program is excuting on server not on client therefore this java 
+ ( CLIENT  )                                          ( SERVER)             program is called as servlet
      \                                        .dynamic web page request 
       \                                                 /
        \   _ _ _    _  _  _    _  _    _     _    _    /                                            
+                        response
 
 so that java program which is excuted on server is called as servlet , this is base of spring and 
 spring boot frame work
