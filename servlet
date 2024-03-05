@@ -18,4 +18,45 @@ their is many server for java like tomcat . but java technology servlet is indep
 so we can use any server we want 
 
 
+Installing the apache tomcat server
+step 1 if u want to install jdk by anychance
+* u have to check the lts version of java because lts versions are the last long version
+
+step 2 now we can download the tomcat and check the tomcat version 32bit/64bit version installer
+step 3  check host manager and examples too then after doing next we have to specifiy the port according
+        to or need so we will the port 8080 to 9494 ** but u should take the port which is free**
+ then give the user name and password 
+      for ROLE : put ",manager-script"  // this will make it easier to configure with the ecllipse and
+       netbeans
+
+      this fetched the java path dynamically otherwise u have to give the java path (jdk)
+
+step 4: is see that are tomcat server is set up then uncheck show and check run apache tomcat this 
+         u will see server is running and it will show a server running window  
+
+step 5: now to check that tomcat is running or not go to the webbrowser put "localhost:8080" and check do
+         server is running if it running then u will see the apache tomcat home page open on that server
+
+       to check that servers are running or not running then u can go to the manager apps then it ask for the password
+       and username which they already asked for the while setup tomcat , now center will open now from here u can 
+        deploy the files manually 
+
+step 6: but we will not deploy files like these we will connect tomcat with id and then deploy the files 
+
+C:\Program Files\Apache Software Foundation\Tomcat 10.1 path for tomcat and u should give all the permmission to tomcat as admin 
+if no permission is not given 
+
+
+confriguring eclipse with tomcat ( we are doing this to get system automatically deploy )
+
+step 1: first open the ecllipse ide 
+       
+
+ 
+
+
+
+
+
+
 
