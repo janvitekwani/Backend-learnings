@@ -18,7 +18,7 @@ their is many server for java like tomcat . but java technology servlet is indep
 so we can use any server we want 
 
 
-Installing the apache tomcat server
+## Installing the apache tomcat server
 step 1 if u want to install jdk by anychance
 * u have to check the lts version of java because lts versions are the last long version
 
@@ -47,7 +47,7 @@ C:\Program Files\Apache Software Foundation\Tomcat 10.1 path for tomcat and u sh
 if no permission is not given 
 
 
-confriguring eclipse with tomcat ( we are doing this to get system automatically deploy )
+##  confriguring eclipse with tomcat ( we are doing this to get system automatically deploy )
 
 step 1: first open the ecllipse ide 
 step 2: go on the top right corner ( hover on the option and select open perpective )
@@ -59,7 +59,8 @@ step 4: then from the apache folder and select the tomcat v10.1 server and selec
         and after finish server is confrigured.
        
 
- 
+## what is the difference between tomcat version 9 and tomcat version 10 
+
 
 
 
