@@ -50,6 +50,13 @@ if no permission is not given
 confriguring eclipse with tomcat ( we are doing this to get system automatically deploy )
 
 step 1: first open the ecllipse ide 
+step 2: go on the top right corner ( hover on the option and select open perpective )
+       and select java EE , click open
+step 3: on the lower panel select the servers if "no server are avaliable click on server and create new server"
+      or u can go the windows
+step 4: then from the apache folder and select the tomcat v10.1 server and select it 
+        and then click next browse and give the permission and give the tomcat permission C:\Program Files\Apache Software Foundation\Tomcat 10.1 
+        and after finish server is confrigured.
        
 
  
