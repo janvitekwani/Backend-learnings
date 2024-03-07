@@ -1,0 +1,64 @@
+this is the greatest module in spring for making web application
+then we will use different things along with spring mvc
+
+what is spring MVC?
+1)(model view controller) spring mvc is sub framework of spring framework which is 
+used to build a web application 
+2) it is build on the top of the servlet api
+3) it follows the Model-View-Controller design pattern , this was the only
+   problem with servelt and jsp that they we not based on model view controller
+Model - data , view - presentation layer , controller - which controls that with whom control will be
+4) it implements all the basic features of a core spring framework like inversion of control,
+  dependency injection
+
+
+why spring mvc? when we had servlet and jsp 
+1) it seperate each role modal,view,controller etc.
+2) powerful configuration (as will use all the config of spring core )
+3) we can make it lossely cuppled due to spring otherwise in servlet it was tightly 
+  cuppled , u can make object wherever u want but here this will not happen u will not 
+  make the object string will provide u with objects
+
+4) Rapid application development 
+5) spring mvc is flexible means , u can use jsp along with it, if u are not 
+   getting what jsp is than u can use any other framework , easy to test and 
+   much features
+  
+
+##### ____  MVC DESIGN PATTERN  ____  ##### 
+this is not only for java , python or anyother language it is more of how will u 
+design your things 
+
+design pattern means how do u organise your code , how do u right them so your
+element remain  lossely cuppled ( means they remain separate so that u can do 
+maintains easily)
+
+model - data , view - present data to user , controller- interface b/w model and view 
+                                                   basically controlls whom to give data.
+this helps in writting the clean code.
+
+Q. what is the basic role of servlet and jsp?
+A. jsp is made only for view , servlet is used to process the business logic , request
+  is coming that is identified using servlet. servlet execpt the request and jsp shows the 
+  data and the data which is going can be object or a data class that is storing the object
+
+  so u this is how u can use jsp and servlet as model view and controller , by the way 
+  html is also used in it but html is used for static pages and jsp is used for dynamic 
+  pagees 
+  
+
+
+
+
+                                                   
+
+                                                      
+   
+ 
+
+
+
+   
+
+
+ 
