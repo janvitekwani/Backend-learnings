@@ -1,0 +1,20 @@
+How to start the spring boot ? and how to create spring boot projects ?
+their are 4 ways to create spring boot projects
+
+1) create a maven project and add the starter dependencies
+2)using spring initializr( it is basically a website spring.io where u can initialize)(download and then add to or project) 
+3) use IDE like STS ( this is the ide which give plugin for spring)
+4) Spring boot command line interface
+    recommended (2,3)
+
+
+** by using the spring initializr 
+ 
+ group denotes the package name
+ artifact denotes the application name 
+ what is the difference between jar and war?
+ JAR files allows to us package multiple files and WAR files and are only used 
+for web applications
+
+ 
+    
