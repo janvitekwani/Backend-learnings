@@ -1,0 +1,60 @@
+this make 80 % work automatic 
+spring boot is module of the spring from which we can speed up the development
+
+spring framework + embedded serves - configuration = boot  ( this will be spring boot)
+                  ( like tomcat)    (all the confrig we have to do
+                                       manually)
+. we just need to put the dependency
+
+
+
+What is JPA used for in Java?
+JPA stands for Java Persistence API. It is an object-relational mapping (ORM) framework that allows
+us to map Java objects to tables in a relational database.
+
+
+
+benefits:
+. it creates stand alone spring applications that can be started using java-jar.
+. embed tomcat, jetty or undertow directly (no need to deploy WAR files)
+. provides opinionated 'starter' dependencies to simplify your build configuration
+.automatically configure spring and 3rd party libraries whenever possible 
+.provide production ready features such as metrics , health checks , and externalized
+  config
+. absolutely no code generation and no requirement for xml config
+
+
+
+
+how spring boot magic works?
+no magic , programming configuration done automatically , depending on what depenency model is 
+active in your project confriguation is done
+
+here whole work is of starter POM ?(project object model)
+  spring-boot-starter-web  
+  spring-boot-starter-data-jpa (if we want to add the jpa
+    other .. these are basically project and their confriguation is build
+
+  ** when we put all this starter dependency then all the jar will get pulled 
+     and among these their is a jar for auto confrigure and that jar file has a 
+    folder  
+          " META_INF/spring.factories"(in this all the config is done)
+
+In Spring Boot, a bean is an object that is instantiated, assembled,
+and managed by the Spring IoC (Inversion of Control) container 
+
+## where we can see this autoconfiguration file in our project?
+maven dependency -> META-INF -> spring factorires right click and open -> here u can
+see that dependencies are declared here  (these are basically classes) -> now select the 
+confriguation (like JpaRepoitoriesAutoConfiguration) -> ctrl+shift +T -> then class file of 
+that confriguation will get open , there u can see that conditionalOnBean ( Bean is the object)
+
+so this conditional files helps in setting up the conditions. 
+
+
+
+
+
+
+
+                                            
