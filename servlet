@@ -61,6 +61,15 @@ step 4: then from the apache folder and select the tomcat v10.1 server and selec
 
 ## what is the difference between tomcat version 9 and tomcat version 10 
 
+in tomcat 10 javaEE is switched from jakartaEE 9
+. eariler we used to have javaEE where we have javax library but now ot has 
+become jakartaEE
+
+. javax code will run in server tomcat 9 only 
+
+
+
+
 
 
 
