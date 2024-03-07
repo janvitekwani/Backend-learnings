@@ -16,5 +16,45 @@ their are 4 ways to create spring boot projects
  JAR files allows to us package multiple files and WAR files and are only used 
 for web applications
 
+
+Q. what is inside springbootprojectApplication.java?
+A. then is run and inside run our application is started springbootprojectApp
+   we also have the annotation i.e.
+  @SpringBootApplication  = @Configuration & @EnableAutoConfiguration & @ComponentScan
+so springbootapplication is these three following annotations, so spring boot min the annnotations
+means this springbootapplication can do all the things like config , enableautoconfig, and will scan all the
+components
+
+
+Q. Steps to import the maven project created by the initaliser
+1) unzip the maven project make sure it contain pom.xml file 
+2) now open ecllipse , now go to the file then select import
+3) now search for maven and then select exisiting maven project 
+4) then select the folder where u have the project, set location and make sure the pom.xml 
+   file is checked 
+5) now finish the project and make sure , network is connected 
+
+
+
+what the component of just created maven project?
+1) resources folder( where u can keep your resources)
+   static - where u can keep the static files, templates - where we can keep the templates
+    appliaction.properties - here u can mention , if u want to change the port , configure path 
+
+2)mvnw.cmd & mvnw - this the utility for using the command line rather
+                   so if u are using ecllipse as ide u can delete it 
+
+3) porm.xml - main project is prom.xml
+
+
+                              
+
+               
+
+
+
+
+
+
  
     
