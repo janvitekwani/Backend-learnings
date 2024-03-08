@@ -47,18 +47,21 @@ A. jsp is made only for view , servlet is used to process the business logic , r
   pagees 
   
 
+****************************************************  complete working of spring mvc  **********************************************************
+  
+  As we know spring mvc --> make website --> client & server achiture 
 
+                      _________________________________________________________________________________                              
+                     |                                                                                 |
+                     |                                                                                 |    
+  CLIENT  ------- request ----> Front contoller     ----delegate the request--->      CONTROLLER |                                                                                 |
+                     |                              -- --------                            (handle request)                  |
+                     |                                                                                 | 
+                     |                                                                                 |            
+                     |                                                                                 |   
+                     |                                                                                 |       
+                     |_________________________________________________________________________________                                                                                 |  
+                                                    TOMCAT SERVER
 
-
-                                                   
-
-                                                      
-   
- 
-
-
-
-   
-
-
- 
+ front controller : will take the help of handler mapping and deligate the request
+controller: this can take help of the all the layer, it take help of dao and services 
