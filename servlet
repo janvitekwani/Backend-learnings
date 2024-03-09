@@ -17,6 +17,11 @@ spring boot frame work
 their is many server for java like tomcat . but java technology servlet is independent of server 
 so we can use any server we want 
 
+Q) what is actually apache ?
+A) apache is responsible for accepting directory (http) requests from internet 
+  users and sending them their desired info in the form of files and web pages. 
+  this is why appache server tomcat is used for 
+
 
 ## Installing the apache tomcat server
 step 1 if u want to install jdk by anychance
@@ -66,6 +71,18 @@ in tomcat 10 javaEE is switched from jakartaEE 9
 become jakartaEE
 
 . javax code will run in server tomcat 9 only 
+
+
+
+go to main -> java -> webapp -> web.xml ( this file is the heart of this because here we 
+                                           do all the confrigurations)
+
+and all the home page we make are in webapp inside the we make a file called index.jsp 
+
+
+Q. HOW TO CREATE SERVLET USING JAVAX.servlet.SERVLET INTERFACE
+A. in this we learn about servlet and how to exceute servlet, so servlet is the simple 
+java program so we will create it with simple programming.
 
 
 
