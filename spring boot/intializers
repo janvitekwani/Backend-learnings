@@ -52,7 +52,55 @@ right click on your screen and run the project
 
 ## for changing the port u can go on application.port ---- and write this (server.port =9192)
 
-*NOTE: and keep in mind u have to do all your work in your package **                    
+**NOTE: and keep in mind u have to do all your work in your package , mean right 
+click on the package name at the right panel  **
+
+
+******************LET'S MAKE CONTROLLER ON THE SPRING BOOT ******************
+1) first we will make the class by going on the package ,Let's say with the
+    name TestController
+2) now add the annotation @Controller along with the package associate with the 
+   annotation 
+3) now add handler and name it as firsthandler() and return type will be string 
+   and we will name it as first handler 
+
+  for eg:
+    public String firstHandler()
+    {  return " Just for testing !!"; }
+
+4) and now we will do the mapping of this  using the notation @RequestMapping("/test")
+    and import the package associated with this annotaion.
+
+5) and then we will use the response annotation to run the above string on our web 
+  page
+
+    http://localhost:9192/test   // now by writing this u can run your program 
+
+** here u can do jsp configue or any other configue *
+
+
+doubts ?
+1) what is actually controller?
+2)what is handler ? and why do created function for it?
+3)now we will do mapping using the annotations, and what is the mapping ?
+4) what is the response annotation and why it is used for running the string on the page?
+5) why it run on  http://localhost:9192/test why /test ?
+     
+
+//
+
+*********************   Learning about STS  *******************************
+STS  is the ide that supports spring boot . it has addition plugins.
+
+
+
+
+
+
+
+
+
+
 
                
 
