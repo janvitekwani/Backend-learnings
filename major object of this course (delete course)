@@ -1,0 +1,12 @@
+learn how to build java applications with - Spring Boot and Hibernate
+
+*****************  what we will learn **********************************
+. in this u will learn how to develop a spring boot application
+.leverage Hibernate / JPA for database access
+. Develop a rest api using the spring boot
+. create a spring MVC app with Spring boot
+.connect spring boot apps to database for CRUD development 
+.apply  spring security to control application access
+.leverage all java configuration (no xml) and Maven 
+
+
