@@ -1,0 +1,52 @@
+Q how spring boot make the formatation of the project easier ?
+A . make it easier to get started with spring development
+  . minimize the amount of manual config 
+  . perform auto-config based on prop files and JAR classpath 
+  . help to resolve dependency conflicts(Maven or Gradle)
+  . provide an embedded http server so you can get started quickly
+     tomcat,jetty , undertow,..
+
+Q. what is the relation between the spring and spring boot?
+A. spring boot uses spring behind the scenes
+   spring boot simply makes it easier to use spring
+
+Q. what is the spring initializr ?
+A. u can download spring initializr 
+   it is used for the quick starter of spring boot project 
+   select your dependencies
+   create a maven/ gradle project
+   import the project into your ide.
+
+** our applications has the embedded server so we can make or app standalone***
+run the spring boot app from the ide or command-line
+
+Q. how to run the code in command line?
+A. u can make the file mycoolapp.jar = mycode+tomcat
+     ( u can make a jar file which include mycode and tomcat )
+   now go to the command line and type the command
+   java -jar mycoolapp.jar
+                ^
+                |______ (name of our JAR files)
+
+Q. what if our manager wants to deploy application in traditional way that using the 
+  WAR files. WAR (Web Application Archive)
+A. spring boot application can be deployed in the traditional ways
+   deploy WAR file to an external server : tomcat ,Jboss,websphere etc..
+
+     tomcat 
+       mycoolapp.war = mycode 
+   
+
+. spring boot is only about the config base remains behind architecture is of spring 
+  only 
+. behind the scene spring boot uses spring ,so the code of spring take same 
+ time work as the spring boot
+
+  
+
+
+############  doubt ?
+ what is the traditional way of deployment and why it uses WAR files ?
+
+
+    
