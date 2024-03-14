@@ -34,17 +34,119 @@ Q. Steps to import the maven project created by the initaliser
    file is checked 
 5) now finish the project and make sure , network is connected 
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
+******************** SPRING BOOT STARTER  ************************
+problem solve: what is the problem and why spring application is really hard!! and harder 
+   question is which maven dependencies i need to use ?
+
+so better solution is that we create collection as a group of dependencies 
+so i don't have to search for each dependency
+
+
+SOLITIONS: is by making the spring boot starters 
+        1) a curated list of maven dependencies 
+        2) a collections of dependencies grouped together 
+        3) tested and verified by the spring development team
+        4) makes it much easier for the developer to get started with spring
+        5) reduces the ammount of maven config
+
+ Q. what was the difference between now and earlier ?
+                                             *******
+ for spring MVC we have to write so much            *
+ <!-- spring support -->                            *
+   <dependency>                                     *
+       <groupId> fgrgka </groupId>                  *
+       <artifactId> spring-webapp</artifactId>      *
+       <version> 6.0.0.RC1 </version>               *    
+   </dependency>                                    *
+                                                    *
+<!-- hibrenate validator -->                        *    ( all of this we need to do 
+                                                            with spring mvc)       
+<dependency>                                        *
+   <groupId> ojafjwbtibni </groupId>                *
+   <artifactId>jarqjrtgntg</artifactId>             *
+   <version> rqrggnto </version>                    *
+</dependency>                                       *
+                                                    *
+<!-- web template thymeleof -->                     *
+<dependency>                                        *
+     <groupId> fgrgka </groupId>                    *
+       <artifactId> thymleaf</artifactId>           *
+       <version> 6.0.0.RC1 </version>               *
+</dependency>                                       *
+                                        * * * * * * *
+
+
+so spring boot provides spring-boot-starter-web
+which is the spring boot starter depenecies
+
+// this save a developer for putting the list of all the individual dependencies 
+<dependency>
+  <groupId> org.springframework.boot </groupId>
+  <artifactId>spring-boot-starter-web</artifactId>   (spring boot starters a collection of maven 
+                                                             dependencies 
+</dependency>                             (contains spring web,spring webmvc, hibernate-validator,json tomcat ...)
+
+//** we can give these depenecies while creating the spring intializer , so we want to make the spring app that have the
+    web security then we can select the dependencies in the spring initializr , and it will directly add that to your pom.xml 
+    files
+
+
+** so there is 30 + spring boot starter from the spring development team
+  https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.build-systems.starters
+  by this u will get the list all the 30 starters
+
+// by this way u can explore the starters
+ open pom.xml -> select tab for dependency hierarchy at the bottom -> expand the desired starter  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ******************** SPRING BOOT STARTER PARENT  ************************
+  spring boot provides a "starter parent" so this is the special parent which provides the
+   maven defaults
+
+
+##Maven standard directory structure
+    directory             description
+  src/main/java         your java source code
+  src/main/resources    properties/ config files used by your app
+  src/test/java          unit testing source code
+
+## Maven wrapper files (mvnw and mvnw.cmd)
+.mvnw allows u to run maven project
+.no need to have a maven installed or present on your path
+.if correct version of maven is not found on your computer
+.automatically download correct version of maven
+
+Two files are provided
+.mvnw.cmd for MS Windows  >mvnv clean compiler test 
+
+**** if u have mvn already installed then their is no need of the mvn and mvn.cmd file  ****
+
+
+## Maven POM files
+   pom.xml includes info that you entered at spring initializr website
+    this has the information about the artifact id and groupid, so on
+
+## templates
+    spring boot includes auto-config for following template engines
+     .freeMarker , .thymeleaf (popular template enginer we will use later in this course ).mustache
+
+## unit test
+   we have class mycoolapplicationTests.java created by intialiser, u can add your basic 
+   custom test to this file
 
 what the component of just created maven project?
 1) resources folder( where u can keep your resources)
    static - where u can keep the static files, templates - where we can keep the templates
-    appliaction.properties - here u can mention , if u want to change the port , configure path 
+   
+appliaction.properties - here u can mention , if u want to change the port , configure path 
 
 2)mvnw.cmd & mvnw - this the utility for using the command line rather
                    so if u are using ecllipse as ide u can delete it 
 
 3) porm.xml - main project is prom.xml
+4) static : static content from the static directory example, html files,css ,javascript
 
 
 
@@ -86,7 +188,9 @@ doubts ?
 4)now we will do mapping using the annotations, and what is the mapping ?
 5) what is the response annotation and why it is used for running the string on the page?
 6) why it run on  http://localhost:9192/test why /test ?
-     
+ 7) make me understand a warning do not use the src/main/webapp directory if your application is packaged as a JAR
+    although this is a standard maven directory , it works only with WAR packaging 
+    it is silently ignored by most build tools if you generate a Jar files
 
 //
 
