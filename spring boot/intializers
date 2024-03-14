@@ -81,10 +81,11 @@ click on the package name at the right panel  **
 
 doubts ?
 1) what is actually controller?
-2)what is handler ? and why do created function for it?
-3)now we will do mapping using the annotations, and what is the mapping ?
-4) what is the response annotation and why it is used for running the string on the page?
-5) why it run on  http://localhost:9192/test why /test ?
+2) what do we make the package name using .rest after pervious package name ?
+3)what is handler ? and why do created function for it?
+4)now we will do mapping using the annotations, and what is the mapping ?
+5) what is the response annotation and why it is used for running the string on the page?
+6) why it run on  http://localhost:9192/test why /test ?
      
 
 //
