@@ -1,0 +1,66 @@
+-------------------------------------  repository and jpa ------------------------------------------------
+JPA (java persistence API) java persistence(permanent storing) api
+
+JPA is a orm tool means object relational mapping ( orm is a third party application)
+   Q. what is the role of the ORM ?
+   A. now u made a object based program in java that can be understood by the database by using the 
+       with the help of ORM 
+//if u donot use ORM then u need to write the query and SQL manually 
+
+   their is two tasks of the ORM ?
+   1) saves the object in the database
+   2) handle SQL by itself
+   3) and whenver we need a table form orm then it will convert it into table
+      and give it back to u.
+
+  ## HOW ORM ACTUALLY WORKS?  // we just have to do mapping and rest all the things are handled by orm   
+                                   this is how table will form for user
+  class USER                   | id  | Name  | city  |  profile |
+{                              |     |       |       |          |
+   int id                      |     |       |       |          |   
+    String name                
+    String city                so we map id field from id colunm 
+    String profile              name fielf from name colum
+                                city feild from city colum   ( so this much 
+  }                                                           work we have to do 
+                                                         by ourself)
+                                                so their is two ways of doing mapping 
+                                             either we can use XML or java annotations.( we learn
+                                                                           these things in detailed when we
+                                                                             use hibernate)
+
+  ### NOW LET's TALK ABOUT DIFFERENCE BETWEEN JPA AND HIBERNATE
+   jpa is just a  specification which say to follows these things and your data
+   will be stored, here it is only specification their is no implementation 
+
+   so actual implementation of jpa is hibernate , the things specified in jpa is implemented
+    by hibernate   other implementation like hibernate , ecllipse link , open jpa
+
+
+ *** JPA provides to interfaces EntityMAnagerfactory , entityManager (provide methods) (object which performs all this function)   
+                                                         create, update, read, delete
+
+Q. how to use spring boot makes easier to perform operation with JPA 
+A. spring boot auto configure everything so we have to add the dependency
+       spring-boot-starter-data-jpa
+ 
+      USER ( we have to perform                 CRUD respository( it is the spring
+                operations with user object)       ^               interface ) // this will provide all the 
+                                                   |  (extends                           functionally to perform database operations 
+                        USER RESPOSITORY( so database layer                  ---extends---->       JPA REPOSITORY
+                                   we will form the user repository)      /                 ( if u donot want to implement crud repository so their is
+                                                                                                  child of it i.e.jPA respository they work same just
+                                                                                                jpa has some extra featues )
+
+Q. how to use JPA in sts?
+    
+
+    1) first starter with new spring starter project , give all the necessary details
+    2) add the dependency , sql driver , spring data jpa and we will not add the web dependency
+         because we want our application to be stand alone.
+     you can get maven dependencies - u can see all the dependency hibernate-core 5.4 
+ 
+   3) third make another package 
+
+    
+
