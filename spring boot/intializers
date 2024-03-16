@@ -141,6 +141,7 @@ what the component of just created maven project?
    static - where u can keep the static files, templates - where we can keep the templates
    
 appliaction.properties - here u can mention , if u want to change the port , configure path 
+               
 
 2)mvnw.cmd & mvnw - this the utility for using the command line rather
                    so if u are using ecllipse as ide u can delete it 
@@ -148,6 +149,26 @@ appliaction.properties - here u can mention , if u want to change the port , con
 3) porm.xml - main project is prom.xml
 4) static : static content from the static directory example, html files,css ,javascript
 
+
+******* UNDERSTANDING MORE ABOUT APPLICATION.PROPERTIES *********
+properties file not always means u always have to config in it u can put the data in 
+form of key and value pair in it.
+and spring boot use these properties to configure.
+
+(so this is prebuild)
+PRECONFIGURED     ---------by  application .properties ------->our customize application
+  APPLICATION 
+(as u made the application u                                        ( and for basically doing this 
+    get a preconfigured application)                                config u have to give key value pair)
+    get a preconfigured application)                                                                    
+
+list of the properties u can change
+1) core properties           6) transaction properties
+2) cache properties          7)data migration properties
+3) mail properties           8)integration properties
+4)json properties          and many more properties u can
+5) data properties             configure while configuration u can see the list
+                              on spring boot website
 
 
 right click on your screen and run the project 
