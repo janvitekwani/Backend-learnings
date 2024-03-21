@@ -171,6 +171,9 @@ list of the properties u can change
                               on spring boot website
 
 
+application.yml file can also used to do all the confirguration
+
+
 right click on your screen and run the project 
 
 ## for changing the port u can go on application.port ---- and write this (server.port =9192)
