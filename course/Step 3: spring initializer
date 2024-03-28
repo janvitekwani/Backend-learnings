@@ -1,0 +1,13 @@
+how to download projects form the spring intialiser ?
+. best way to make the spring project is to go the start.spring.go website
+             ( this is called the spring initializr)
+. version of spring boot to choose while intializer i.e. 3.0.0 and snapshot 
+  version , right now there is no release version for Springboard three
+
+. when u give a group id and artifact id, group id and artifact id are very similar
+  to package and class name
+  
+      
+
+   
+             
