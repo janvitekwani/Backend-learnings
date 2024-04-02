@@ -1,3 +1,33 @@
+######### Getting start with the spring and why ?##########
+you can build variety of applications using java, spring and spring boot
+.web 
+.rest API
+.full stack
+.microservices
+
+Irrespective of the app you are building
+   .spring framework provides all the core features
+      -understanding spring helps you learn spring boot easily
+       -help in debugging problems quickly
+
+
+### GOAL : Understand core features of spring framwork
+    APPROACH : build a loose coupled hello world gaming app with 
+                modern spring approach 
+
+   . GET handon with spring and understand
+     why  spring?
+    terminology?
+        .tight coupling and loose coupling
+        .ioc container
+        .application context
+        .component scan 
+        .dependency injection 
+        .auto wiring 
+
+we will design an iterative , and in each approach we will do something or other
+
+
 how to download projects form the spring intialiser ?
 . best way to make the spring project is to go the start.spring.go website
              ( this is called the spring initializr)
@@ -8,6 +38,33 @@ how to download projects form the spring intialiser ?
   to package and class name
   
       
+ITERATION 1 : Tightly Coupled java code
+           .gamerunner class
+           .game classes: Mario, SuperContra , Pacman etc
+what is coupling?
+so coupling is how much work is involved in changing something ?
+   even in real world , a engine is tightly coupled to a car
+    whereas a wheel is loosely coupled to a car
+
+coupling is even more important in building great software
+     .business requirement changes
+     .frameworks changes
+     .code changes
+ .we want loose coupling as much as possible
+.we want to make functional changes as less code changes as possible
+
+
+ITERATION 2 : LOOSE COUPLING -interfaces
+           .gamerunner class
+           .gamingconsole interface
+LET explore how java interfaces and spring framework help with 
+            loose coupling!
+
+   so for the loose coupling what we have changed
+ 
+      EARILER                                      NOW
+gameRunner - runinng the three class            gameRunner - interface(gaming console)- all the gamming classes 
+                                                                                            implementing the interface 
 
    
              
