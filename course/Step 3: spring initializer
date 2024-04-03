@@ -66,5 +66,10 @@ LET explore how java interfaces and spring framework help with
 gameRunner - runinng the three class            gameRunner - interface(gaming console)- all the gamming classes 
                                                                                             implementing the interface 
 
-   
+
+
+ITERATION 3 : Let's create our first spring bean
+
+   JVM (inside the jvm ) --> we have SPRING context ---> inside that we have name bean created 
+and in that we have spring framework managed for us 
              
