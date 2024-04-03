@@ -72,4 +72,214 @@ ITERATION 3 : Let's create our first spring bean
 
    JVM (inside the jvm ) --> we have SPRING context ---> inside that we have name bean created 
 and in that we have spring framework managed for us 
-             
+
+# Step to configure the first spring bean
+
+   step 1: first we need a runing java application that means JVM is intialised
+   step 2: (Launch a spring context)and this jvm we would have spring context
+   step 3: (configure the things that we want the spring to manage)
+         and we want spring framework to manage specific thing that is name
+
+
+** Q. how to make a class as the spring configuration class ?
+   by adding the annotation  @Configuration
+   -- and in this spring configuration class u can define one or more beans
+
+
+  Q. now to launch the spring configuration class?
+    the configuration class can be launched when using the 
+    var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class) // and what we are creating here a spring context
+
+HelloWorldConfiguration.class   // this the class managing the configuration
+
+we want the configuration to manage a bean "name"
+ so we can manage bean by using 
+@Bean   // this indicates that a method produces a bean that needs to be 
+     // managed by Spring container
+public String name() {
+  return "janvi";
+}
+
+******* how can we excess that been then we have context ready to manage that bean ********
+  by - System.out.println(context.getBean("name"));
+  output - janvi
+        
+ ###########-----------  so this is how spring can manage name for us --------------##########
+
+  WHAT IS RECORD ?
+  |  in java 14 record is the like a class with automatically implements constructors, getter and setter
+  |  record keyword is used to declare a record class, Records are immutable
+  |   They are concise, as they automatically generate implementations for equals(), hashCode(), and toString() 
+
+
+CODE : 
+
+     package com.onlyjavatech.projectspringboot;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+
+
+
+public class App02HelloWorldSpring {
+
+	public static void main(String[] args) {
+	// now if we have this application that means we already have jvm running
+		/* now inside JVM we want to create a spring context , and we want to 
+		   manage the specific thing called name */
+		
+		//1:Launch a spring context
+	     var context = new AnnotationConfigApplicationContext(helloWorldConfiguration.class);
+		
+		//2: Configure the things that we want spring to manage -@Configuration 
+		 // helloWorldConfiguration - @Configuration
+		 // name - @Bean
+		 
+		 
+		 // 3: Retreving Beans Managed by Spring
+		 System.out.println( context.getBean("name"));
+		// so to manage we have the thing called configuration class
+		 
+		 System.out.println( context.getBean("age"));
+		 System.out.println( context.getBean("person"));
+		 System.out.println( context.getBean("address"));
+		
+		
+		
+	}
+
+}
+
+
+package com.onlyjavatech.projectspringboot;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+
+//by adding these annotation we can indicate that it is configuration 
+@Configuration 
+                
+public class helloWorldConfiguration {
+// so in this you can define spring beans 
+	
+	record Person (String name, int  age) { };
+	record Address(String firstLine , String city){};
+	@Bean
+	  public String name() {
+		    return "janvi";
+	  }
+	
+	@Bean
+	  public int age() {
+		    return 15;
+	  }
+	
+	@Bean
+	  public Person person() {
+		    return new Person("Ravi",20);
+	  }
+	
+	@Bean
+	  public Address address() {
+		    return new Address("Baker street","London");
+	  }
+	
+}
+
+
+
+
+
+*******************************************************************************************************
+
+                                   AUTOWIRING IN BEAN 
+so spring provides wide varity of bean and provides u way to call the bean together
+and all these bean are independent to each other they donot have any relationship with 
+each other
+
+// if we change this
+@Bean (name = "address2")
+	  public Address address() {
+		    return new Address("Baker street","London");
+	  }
+// then it can be called as 
+  System.out.println( context.getBean("address2"));
+// or by class name i.e.
+  System.out.println( context.getBean(Address.class));  // but for this u need to import something
+
+
+
+**********************************************************************************************************************
+
+                           SPRING QUESTIOS YOU MIGHT BE THINKINH ABOUT
+Question1 : spring container vs spring context vs ioc container vs application context
+2Q: java bean vs spring bean
+Q3 : how can i list all bean managed by spring framework ?
+Q4 : what if multiple matching beans are available ?
+Q5 : Spring is managing objects and performing auto-wiring 
+    . but aren't er writing code to create objects?
+    . how do we get spring to crete objects for us?
+
+
+
+ Ans 1 : spring container :is the one that manages the spring beans and it's life cycle 
+         (java classes)   (configuration classes)
+             POJOs         Config
+                 \          /
+                 ioc container  (spring container)  this will create a spring context and manage it for us
+                        |
+                     ready system( jvm --> spring --> name , age, person , person 2 , address  )
+
+* ioc stand for inversion of control               
+
+    and their are two types of spring containers
+     1) Bean Factory : Basic Spring Container
+     2) Application Context: Advanced spring container with enterprise - specific features
+        .easy to use in web application 
+        .easy internationalization
+        .easy integration with spring AOP
+      // more frequently used even in our course we are using the applcation context
+
+
+Ans 2: difference between java bean ,pojo's and spring beans
+
+
+   class Pojo { //pojo means plain old java object - so every object we created till now is a pojo 
+       private String text;
+       private int number;
+      public String toString() {
+            return text + ":" + number;}
+   }
+
+class JavaBean implemets Serializable{ // EJB
+
+ // 1 :constraints: public no argument constructors
+
+   public JavaBean() {
+}
+    2constraints: getters and setters
+   3 constraints: ser
+
+
+public class SpringBeanvsJavaBean {
+    public static void main(String [] args){
+      Pojo pojo = new Pojo();
+    System.out.println();
+
+//** so java beans are not really used and concept used is pojo 's and spring beans
+      nowhere day's  ****//
+
+so java bean is nothing but any class which has these three constraints
+JAVA BEAN
+  1) have public default (no argument) constructors
+  2) Allows access to their properties using getter and setter
+  3) it needs to implement java.io.serializable 
+
+POJO : Plain old java object
+   .no constraints
+   .any java object is POJO!
+
+Spring BEAN : any java object that is managed by spring 
+             spring uses IOC container (Bean FActory or Application COntext ) to manage these objects
