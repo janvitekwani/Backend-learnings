@@ -283,3 +283,52 @@ POJO : Plain old java object
 
 Spring BEAN : any java object that is managed by spring 
              spring uses IOC container (Bean FActory or Application COntext ) to manage these objects
+
+
+***************  before answering the 3rd question u must understand the concept of functional programing ************
+
+FUNCTIONAL PROGRAMING IN JAVA:
+  functional programing is a paradigm shift - fundamental change in approach 
+1) u need to understand how functional programing  is different
+2) -Streams, Lambda expressions and method references
+
+
+
+let's take a example to understand 
+  in traditional programming
+
+
+// STRUCTURED APPROACH ****************
+
+public class FP01Functional {
+public static void main(String [] args) {
+    printAllNumbersInListStructured(List.of(12,9,13,4,6,2,4,12,15));
+}
+
+private static void printAllNumbersInListStructured(List<Integer> numbers) {
+   // how to loop the numbers ?
+   for(int number:numbers) {
+    System.out.println(number);
+}
+}
+
+// FUNCTIONAL APPROACH *************************
+
+public class FP01Functional {
+public static void main(String [] args) {
+    printAllNumbersInListStructured(List.of(12,9,13,4,6,2,4,12,15));
+}
+
+private static void printAllNumbersInListStructured(List<Integer> numbers) {
+//[12,9,13,4,6,2,4,12,15]
+  //12
+  //9
+  //13 
+//4 so we want to convert this into streams of numbers
+//....
+// What to do?
+   numbers.stream()
+    
+   
+}
+}
