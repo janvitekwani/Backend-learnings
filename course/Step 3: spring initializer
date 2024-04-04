@@ -283,3 +283,25 @@ POJO : Plain old java object
 
 Spring BEAN : any java object that is managed by spring 
              spring uses IOC container (Bean FActory or Application COntext ) to manage these objects
+
+
+
+Ans 3: how can we manage all the beans by spring framework ?
+      what if multiple matching beans are available ?
+
+
+ ********** Q. before answering this we need to understand functional programming this is the concept of java 8 ******************
+one of the things u need to understand is functional programing is the paradigm shift
+
+    PARADIGM SHIFT - fundamental change in approach 
+( means u have change how u think about programming to master this )
+
+objective - Understand the Basics of functional programming 
+          - streams , lambda expressions and method references
+
+
+problem 1: Traditional approach 
+       print each element from list on its own line 
+
+
+ 
