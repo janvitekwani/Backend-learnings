@@ -318,17 +318,106 @@ public class FP01Functional {
 public static void main(String [] args) {
     printAllNumbersInListStructured(List.of(12,9,13,4,6,2,4,12,15));
 }
+**********************************
+*
+*  private static void print(int number) {
+*   System.out.println(number); }
+*
+*  private static void printAllNumbersInListStructured(List<Integer> numbers) {
+*  //[12,9,13,4,6,2,4,12,15]
+*  //12
+*  //9
+*  //13 
+*   //4 
+*   //....
+*    // What to do?     // so this method refrencing  here we are referencing above print function
+*   numbers.stream()      // by this we will convert int into stream 
+*       .forEach(FP01Functional::print)           // so if we wnt to print 5 typically what we will do
+*                          // we will write it as print(5)
+*    
 
-private static void printAllNumbersInListStructured(List<Integer> numbers) {
-//[12,9,13,4,6,2,4,12,15]
-  //12
-  //9
-  //13 
-//4 so we want to convert this into streams of numbers
-//....
-// What to do?
-   numbers.stream()
+ ***************************  
+  instead of writing the above code
+ * ********************************************
+*
+ *  private static void printAllNumbersInListStructured(List<Integer> number) {
+ *   numbers.stream()
+ *        .forEach(System.out::println);  // method referencing
+ *
+ **********************************************************************
+
+ // we want to call the only even numbers
+
+  private static boolean isEven (int number) {
+        return number%2 ==0;
+}
+   public static void printEvenNumbersInListFunctional (List<Integer> numbers) {
+     // what to do?
+
+  numbers.stream()
+     .filter(FP01Functional::isEven)   // we can add filter in here - only allow even number
+     .forEach(System.out::println); //method reference
     
-   
+    
+
 }
 }
+
+
+
+
+
+
+*********************** LAMBDA EXPRESSION is the simpler way of doing this *************************************
+lamda expression is nothing but a method by using the lambda expression u can create a simpler way of 
+creating the method
+
+
+
+   so will change code to
+      number.stream()
+             .filter(number -> number%2 == 0) //lambda expression
+             .forEach(System.out::println); //method reference
+
+*****  Method Runners:::  with method runner we can refer to the methods which is defined 
+ somewhere else
+
+
+......................... Let's do something more advanced in functional programing ......................
+
+     //mapping - x -> x*x
+
+       .map(number -> number*number ) //this will return the square of the numbers
+
+
+#### Class optional 
+    you are not a real java programmer until you have not dealt with null pointer exception
+  . Exception we hate the most: java.lang.nullpointerEXception 
+.tony hoare introduced null references in ALGOL 
+   - popular for developing the quick algo
+   - he calls null references " my billion- dollar mistake"
+
+java optinal class is from java 8 onwards and used to deal with this mistakes
+
+ 
+
+public class PlayingWithOptional {
+  public static void main(String [] args) {
+        List<String>fruits =List.of("apple","banana" , "mango");
+
+   Predicate<? super String > predicate = fruit ->fruit.startWith("b");
+     Optional <String>optional = fruits.stream().filter(predicate).filter(predicate)// ctrl +enter and create a local level predicate
+// automatically optional appeared because it may or maynot have
+    System.out.println(optional);
+    System.out.println(optional.isEmpty());
+     System.out.println(optional.isPresent());
+      System.out.println(optional.get());
+     // try the same code with c letter
+    
+     // Optional.of(value) // to create optional instance
+     //Optional.empty()  // to create null instance of optional
+
+XXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxx  end this of functional programing xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Q. next question is that muliple matching bean is available in here 
+
