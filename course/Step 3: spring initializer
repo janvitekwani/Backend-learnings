@@ -405,6 +405,54 @@ List<String> numbers = List.of("spring","springboot","api ","microservices" );
        .map(number-> number*number ) //this will return the square of the numbers
 
 
+                              #######   ACTIVITY CODE FOR FUNCTIONAL PROGRAMING   ###########
+
+package functionalprogramranga;
+
+import java.util.List;
+
+public class functionalprogramranga {
+	
+	public static void main (String args[])
+	{
+		List<String> numbers = List.of("spring","springboot","api ","microservices" );
+		
+		numbers.stream()
+		  .forEach(System.out::println);
+		
+		numbers.stream()
+		 .filter(course ->course.contains("spring"))
+		 .forEach(System.out::println);
+		
+		
+		numbers.stream()
+		 .filter(course ->course.length()>=4)
+		 .forEach(System.out::println);
+		
+		
+		numbers.stream()
+		 .map(course -> course +"  "+ course.length())
+		 .forEach(System.out::println);
+		
+		
+		
+		List<Integer> string= List.of(10,20,3,4,5,6,10 );
+		
+		string.stream()
+		 .filter(n->n%2!=0)
+		 .map(n->n*n*n)
+		 .forEach(System.out::println);
+		
+		
+		
+	}
+
+}
+
+
+    
+
+
 #### Class optional 
     you are not a real java programmer until you have not dealt with null pointer exception
   . Exception we hate the most: java.lang.nullpointerEXception 
@@ -438,6 +486,8 @@ public class PlayingWithOptional {
 
 
 XXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxx  end this of functional programing xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 
 Q. next question is that muliple matching bean is available in here 
 
