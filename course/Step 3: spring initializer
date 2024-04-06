@@ -355,16 +355,13 @@ public static void main(String [] args) {
      // what to do?
 
   numbers.stream();
-     .filter(FP01Functional::isEven) ;  // we can add filter in here - only allow even number
+     .filter(FP01Functional::isEven)  // we can add filter in here - only allow even number
      .forEach(System.out::println); //method reference
     
     
 
 }
 }
-
-
-
 
 
 
@@ -376,18 +373,36 @@ creating the method
 
    so will change code to
       number.stream()
-             .filter(number -> number%2 == 0) //lambda expression
+             .filter(n -> n%2 == 0) //lambda expression
              .forEach(System.out::println); //method reference
+
+// the variable used for number and n should be different 
 
 *****  Method Runners:::  with method runner we can refer to the methods which is defined 
  somewhere else
+
+
+List<String> numbers = List.of("spring","springboot","api ","microservices" );
+		
+		numbers.stream()
+		  .forEach(System.out::println);
+		
+		numbers.stream()
+		 .filter(course ->course.contains("spring"))
+		 .forEach(System.out::println);
+		
+		
+		numbers.stream()
+		 .filter(course ->course.length()>=4))
+		 .forEach(System.out::println);
+		
 
 
 ......................... Let's do something more advanced in functional programing ......................
 
      //mapping - x -> x*x
 
-       .map(number -> number*number ) //this will return the square of the numbers
+       .map(number-> number*number ) //this will return the square of the numbers
 
 
 #### Class optional 
@@ -416,6 +431,11 @@ public class PlayingWithOptional {
     
      // Optional.of(value) // to create optional instance
      //Optional.empty()  // to create null instance of optional
+
+
+
+
+
 
 XXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxx  end this of functional programing xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
