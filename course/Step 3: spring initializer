@@ -331,8 +331,8 @@ public static void main(String [] args) {
 *   //4 
 *   //....
 *    // What to do?     // so this method refrencing  here we are referencing above print function
-*   numbers.stream()      // by this we will convert int into stream 
-*       .forEach(FP01Functional::print)           // so if we wnt to print 5 typically what we will do
+*   numbers.stream() ;     // by this we will convert int into stream 
+*       .forEach(FP01Functional::print)  '         // so if we wnt to print 5 typically what we will do
 *                          // we will write it as print(5)
 *    
 
@@ -354,8 +354,8 @@ public static void main(String [] args) {
    public static void printEvenNumbersInListFunctional (List<Integer> numbers) {
      // what to do?
 
-  numbers.stream()
-     .filter(FP01Functional::isEven)   // we can add filter in here - only allow even number
+  numbers.stream();
+     .filter(FP01Functional::isEven) ;  // we can add filter in here - only allow even number
      .forEach(System.out::println); //method reference
     
     
