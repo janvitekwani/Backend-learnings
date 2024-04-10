@@ -491,3 +491,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxx  end this of functional programi
 
 Q. next question is that muliple matching bean is available in here 
 
+
+
+
+
+
+Q5 Spring is managing objects and performingauto-wiring 
+   . but aren't we writing the code to create objects?
+   . how do we get spring to create objects for us?
+
