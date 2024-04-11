@@ -284,6 +284,111 @@ each other
 
 so what we can see is the fact that we can reuse bean using existing beans 
 
+
+package com.onlyjavatech.projectspringboot;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.onlyjavatech.projectspringboot.helloWorldConfiguration.Address;
+
+
+
+
+public class App02HelloWorldSpring {
+
+	public static void main(String[] args) {
+	// now if we have this application that means we already have jvm running
+		/* now inside JVM we want to create a spring context , and we want to 
+		   manage the specific thing called name */
+		
+		//1:Launch a spring context
+	     var context = new AnnotationConfigApplicationContext(helloWorldConfiguration.class);
+		
+		//2: Configure the things that we want spring to manage -@Configuration 
+		 // helloWorldConfiguration - @Configuration
+		 // name - @Bean
+		 
+		 
+		 // 3: Retreving Beans Managed by Spring
+		 System.out.println( context.getBean("name"));
+		// so to manage we have the thing called configuration class
+		 
+		 System.out.println( context.getBean("age"));
+		 System.out.println( context.getBean("address2"));
+		 
+		 System.out.println( context.getBean("person"));
+		  System.out.println( context.getBean("person2MethodCall"));
+		  System.out.println( context.getBean("person3Parameters"));
+	      // System.out.println(context.getBean(Address.class));
+	//	************************  here this line will give error  because their two bean address 2 and address 3 
+		
+		  
+	}
+
+}
+
+package com.onlyjavatech.projectspringboot;
+
+//package com.onlyjavatech.projectspringboot;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+
+//by adding these annotation we can indicate that it is configuration 
+@Configuration 
+                
+public class helloWorldConfiguration {
+// so in this you can define spring beans 
+	
+	record Person (String name, int  age, Address address) { };
+	record Address(String firstLine , String city){};
+	@Bean
+	  public String name() {
+		    return "janvi";
+	  }
+	
+	@Bean
+	public int age() {
+		    return 15;
+	}
+
+	@Bean
+	public Person person() {
+		    return new Person("Ravi",20 , new Address("Main Street" ,"Utrecht"));
+		    
+	}
+	
+	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(),age(),address());
+	}
+	
+	@Bean
+	public Person person3Parameters(String name , int age , Address address2) {  
+		//name , age, address2
+		return new Person(name,age,address2);
+	}
+
+	@Bean (name = "address2")
+	public Address address() {
+		    return new Address("Baker street","London");
+	}
+	
+	@Bean (name = "address3")
+	public Address address3() {
+		    return new Address("Gumpanpura","vallabh nagar kota");
+	}
+	
+	
+
+}
+
+
+
+
 **********************************************************************************************************************
 
                            SPRING QUESTIOS YOU MIGHT BE THINKINH ABOUT
