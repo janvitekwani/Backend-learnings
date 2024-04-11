@@ -422,6 +422,10 @@ Q5 : Spring is managing objects and performing auto-wiring
 
 
 Ans 2: difference between java bean ,pojo's and spring beans
+     java bean        pojo's       spring beans
+  ejb
+
+
 
 
    class Pojo { //pojo means plain old java object - so every object we created till now is a pojo 
@@ -431,7 +435,7 @@ Ans 2: difference between java bean ,pojo's and spring beans
             return text + ":" + number;}
    }
 
-class JavaBean implemets Serializable{ // EJB
+class JavaBean implemets Serializable{ // EJB was popular older it was because of java bean 
 
  // 1 :constraints: public no argument constructors
 
@@ -455,12 +459,15 @@ JAVA BEAN
   2) Allows access to their properties using getter and setter
   3) it needs to implement java.io.serializable 
 
-POJO : Plain old java object
+POJO : Plain old java object  (we most often use this )
    .no constraints
    .any java object is POJO!
 
 Spring BEAN : any java object that is managed by spring 
              spring uses IOC container (Bean FActory or Application COntext ) to manage these objects
+        till now we have create spring beans
+
+
 
 
 ***************  before answering the 3rd question u must understand the concept of functional programing ************
@@ -669,7 +676,105 @@ XXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxx  end this of functional programi
 
 Q. next question is that muliple matching bean is available in here 
 
+    so u can solve this by making one of these as primary 
 
+
+public class App02HelloWorldSpring {
+
+	public static void main(String[] args) {
+	// now if we have this application that means we already have jvm running
+		/* now inside JVM we want to create a spring context , and we want to 
+		   manage the specific thing called name */
+		
+		//1:Launch a spring context
+	     var context = new AnnotationConfigApplicationContext(helloWorldConfiguration.class);
+		
+		//2: Configure the things that we want spring to manage -@Configuration 
+		 // helloWorldConfiguration - @Configuration
+		 // name - @Bean
+		 
+		 
+		 // 3: Retreving Beans Managed by Spring
+		 System.out.println( context.getBean("name"));
+		// so to manage we have the thing called configuration class
+		 
+		 System.out.println( context.getBean("age"));
+		 System.out.println( context.getBean("address2"));
+		 
+		 System.out.println( context.getBean("person"));
+		  System.out.println( context.getBean("person2MethodCall"));
+		  System.out.println( context.getBean("person3Parameters"));
+	      // System.out.println(context.getBean(Address.class));
+	//	************************  here this line will give error  because their two bean address 2 and address 3 
+		
+		  
+	}
+
+}
+
+package com.onlyjavatech.projectspringboot;
+
+//package com.onlyjavatech.projectspringboot;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+
+
+
+//by adding these annotation we can indicate that it is configuration 
+@Configuration 
+                
+public class helloWorldConfiguration {
+// so in this you can define spring beans 
+	
+	record Person (String name, int  age, Address address) { };
+	record Address(String firstLine , String city){};
+	@Bean
+	  public String name() {
+		    return "janvi";
+	  }
+	
+	@Bean
+	public int age() {
+		    return 15;
+	}
+
+	@Bean
+	public Person person() {
+		    return new Person("Ravi",20 , new Address("Main Street" ,"Utrecht"));
+		    
+	}
+	
+	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(),age(),address());
+	}
+	
+	@Bean
+	public Person person3Parameters(String name , int age , Address address2) {  
+		//name , age, address2
+		return new Person(name,age,address2);
+	}
+
+	@Bean (name = "address2")
+        @Qulifier("address3qualifier")  // no we are using the qualifier to autowire the object 
+	public Address address() {
+		    return new Address("Baker street","London");
+	}
+	
+	@Bean (name = "address3")
+        @Primary   
+	public Address address3() {
+		    return new Address("Gumpanpura","vallabh nagar kota");
+	}
+	
+	
+
+}
+   
 
 
 
