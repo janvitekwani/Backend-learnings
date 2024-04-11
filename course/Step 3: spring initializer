@@ -32,7 +32,7 @@ how to download projects form the spring intialiser ?
 . best way to make the spring project is to go the start.spring.go website
              ( this is called the spring initializr)
 . version of spring boot to choose while intializer i.e. 3.0.0 and snapshot 
-  version , right now there is no release version for Springboard three
+  version should not be used right now there is no release version for Springboard three
 
 . when u give a group id and artifact id, group id and artifact id are very similar
   to package and class name
@@ -50,9 +50,43 @@ coupling is even more important in building great software
      .business requirement changes
      .frameworks changes
      .code changes
- .we want loose coupling as much as possible
+.we want loose coupling as much as possible
 .we want to make functional changes as less code changes as possible
 
+example code: 
+class 1 : GameRunner.java
+
+  public class GameRunner {
+    MarioGame game;
+public GameRunner(MarioGame game) {
+      this.game = game;
+}
+
+public void run () { 
+sysout("Running game: "+game); 
+game.up();
+game.down();
+
+  }
+
+
+class 2 :  AppGamingBasic.java    // this is the actual class that is running the code
+public class AppGamingBasicJava {
+    public static void main(String [] args) {
+     var marioGame = new MarioGame();
+     var gameRunner = new GameRunner(marioGame);
+    gameRunner.run();
+}
+}
+
+class 3: MarioGame.java{
+
+     public void up() {
+         sysout ("jump"); }
+    public void down() {
+        sysout {"go into a hole "); }
+
+---------------------------------------------------------------------------------------------------------
 
 ITERATION 2 : LOOSE COUPLING -interfaces
            .gamerunner class
@@ -65,7 +99,45 @@ LET explore how java interfaces and spring framework help with
       EARILER                                      NOW
 gameRunner - runinng the three class            gameRunner - interface(gaming console)- all the gamming classes 
                                                                                             implementing the interface 
+class 1 : GameRunner.java
 
+  public class GameRunner {
+    private gamingconsole game;
+public GameRunner(gamingconsole game) {
+      this.game = game;
+}
+
+public void run () { 
+sysout("Running game: "+game); 
+game.up();
+game.down();
+
+  }
+
+
+class 2 :  AppGamingBasic.java    // this is the actual class that is running the code
+public class AppGamingBasicJava {
+    public static void main(String [] args) {
+     var game = new MarioGame();
+     var gameRunner = new GameRunner(game);
+    gameRunner.run();
+}
+}
+
+class 3: MarioGame.java{
+
+public void MarioGame implements Gamingconsole {
+     public void up() {
+         sysout ("jump"); }
+    public void down() {
+        sysout {"go into a hole "); }  }
+
+class 4: Gamingconsole
+   public void GamingConsole {
+     public void up() {   };
+                
+     public void down () {     } ;
+      
 
 
 ITERATION 3 : Let's create our first spring bean
@@ -210,6 +282,7 @@ each other
   System.out.println( context.getBean(Address.class));  // but for this u need to import something
 
 
+so what we can see is the fact that we can reuse bean using existing beans 
 
 **********************************************************************************************************************
 
@@ -235,7 +308,7 @@ Q5 : Spring is managing objects and performing auto-wiring
 * ioc stand for inversion of control               
 
     and their are two types of spring containers
-     1) Bean Factory : Basic Spring Container
+     1) Bean Factory : Basic Spring Container // this we will use
      2) Application Context: Advanced spring container with enterprise - specific features
         .easy to use in web application 
         .easy internationalization
