@@ -1,0 +1,68 @@
+
+Q5. what is the point of the using because in bean we still need to write
+    the object by using the @bean annotation 
+
+
+    so if we automatically want to use the annotations then we can use the 
+    @Component annotation 
+
+    use this annotation 
+     The @Component annotation in Spring is used to declare a class as a Spring bean. It indicates that the class is a component
+     of your Spring application and should be managed by the Spring container. When Spring scans your application for beans (components), 
+     it automatically detects classes annotated with @Component and registers them as beans in the application context.
+
+
+
+class 1 : pacmanGame 
+
+package com.in28minutes.learnspringframework.game;
+
+@Component
+@ComponentScan("com.in28minutes.learnspringframework.game")  // u need to tell the spring to which component to scan 
+                           // therefore we will right the package name which we want to scan 
+                           
+public class PacmanGame implements GamingConsole{
+	
+	public void up() {
+		System.out.println("up");
+	}
+
+	public void down() {
+		System.out.println("down");
+	}
+	
+	public void left() {
+		System.out.println("left");
+	}
+
+	public void right() {
+		System.out.println("right");
+	}
+
+}
+
+
+class 2: App03GamingSpringBeans
+
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GamingConsole;
+
+public class App03GamingSpringBeans {
+
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(GamingConfiguration.class)) {
+
+			context.getBean(GamingConsole.class).up();
+			
+			context.getBean(GameRunner.class).run();
+
+		}
+	}
+}
