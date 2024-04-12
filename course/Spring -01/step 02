@@ -1,0 +1,27 @@
+what is the difference between the PRIMARY AND QUALIFIER -Which one to use?
+
+for eg : 
+    @Component @Primary
+    class QuickSort implement SortingAlgorithm {}
+
+    @Component
+    class BubbleSort implement SortingAlgorithm {}
+
+    @Component
+    class ComplexAlgorithm 
+      @Autowired
+      private SortingAlgorithm algorithm;
+
+   @Component
+    class AnotherComplexAlgorithm 
+        @Autowired @Qualifier ("RadixSortQualifier")
+        private SortingAlgorithm iWantToUseRadixSortOnly;
+
+
+
+@Primary - a bean should be given prefernce when multiple candidates are qualified
+@Qualifer - a specific bean should be auto-wired (name of the bean can be used as qualifier)
+.ALWAYS think fromn the perspective of the class using the SortingAlgorithm 
+ 1 Just @Autowired : Give me (perferred ) Sorting algorithm 
+ 2 @Autowired + @Qualifier : I only want to use spe(re
+(remeber) @qualifier has higher priority then @Primary
