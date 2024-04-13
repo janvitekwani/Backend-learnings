@@ -9,13 +9,18 @@ for eg :
 
     @Component
     class ComplexAlgorithm 
+// we want a sorting algorithm and give me the one with highest priority
       @Autowired
       private SortingAlgorithm algorithm;
 
    @Component
     class AnotherComplexAlgorithm 
-        @Autowired @Qualifier ("RadixSortQualifier")
+        @Autowired @Qualifier ("RadixSortQualifier")  // by using the @qualifier we are saying that we have to make use of
+            // any specific sorting algorithm 
         private SortingAlgorithm iWantToUseRadixSortOnly;
+
+**** so here we conclude that if u are okay with any sorting algorithm then use @Autowired and if u want any 
+     specific sorting algorithm then use @Autowired @Qualifier  **********
 
 
 
