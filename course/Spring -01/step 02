@@ -27,6 +27,8 @@ for eg :
 @Primary - a bean should be given prefernce when multiple candidates are qualified
 @Qualifer - a specific bean should be auto-wired (name of the bean can be used as qualifier)
 .ALWAYS think fromn the perspective of the class using the SortingAlgorithm 
- 1 Just @Autowired : Give me (perferred ) Sorting algorithm 
- 2 @Autowired + @Qualifier : I only want to use spe(re
+ 1 Just @Autowired : Give me (perferred ) Sorting algorithm means if u have one sorting algorithm give that to me and if u have 10 sorting 
+                     algorthim then give me the prime
+
+ 2 @Autowired + @Qualifier : I only want to use specific sorting algorthm - radix sorting 
 (remeber) @qualifier has higher priority then @Primary
