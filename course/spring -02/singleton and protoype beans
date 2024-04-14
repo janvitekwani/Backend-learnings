@@ -1,0 +1,37 @@
+
+
+Spring Bean SCopes 
+by default all the bean created in spring is singelton means same
+instance is returned in string beans
+Singleton - one object instance per Spring IOC container
+
+by if u want the different instance beans to created each time then u can go for 
+prototype
+prototype = possibly many object instances per spring IOC container
+
+
+*** @Scope (value =ConfigurableBeanFactory.SCOPE_PROTOTYPE)  ***// for creating the different instances 
+*** @Scope (value =ConfigurableBeanFactory.SCOPE_SINGLETON) ***
+
+Scopes application only for web aware Spring application context
+request - one object instance per single Http request
+session - one object instance per user http session '
+application - one object instance per web application runtime
+websocket- one object instance per websocket instance
+
+>Java singleton vs Spring SIngleton 
+  .spring singleton : one object instance per spring ioc container
+   .java singleton : one object instance per jvm
+
+   spring singleton and java singleton might mean the same if u are running one
+   IOC container per jvm , however is u are running the multiple ioc container than 
+   spring container are differnt from java container
+
+
+prototype are statefull means if u want to contain the information about the multiple user 
+across the beans then we use the protoype
+
+and if we want to pass the same information then we will use the singleton prototype
+
+
+
