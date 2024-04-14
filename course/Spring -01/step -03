@@ -11,3 +11,14 @@ injection in spring beans. their are three types of dependency
         your beans
 3) feild : no setter or constructor dependency is injected using 
          reflection 
+
+
+first we will understand what dependency injection means
+Dependency Injection (DI) in Spring beans is a design pattern where the dependencies of a class are provided externally rather than
+created within the class itself. In other words, instead of a class creating its dependencies, the dependencies are injected into the 
+class by an external entity, typically the Spring framework.
+
+
+
+first let's take example of field injection:
+ 
