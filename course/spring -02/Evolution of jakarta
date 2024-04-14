@@ -1,0 +1,14 @@
+evolution of jakarta EE .vs J2EE vs javaEE
+
+   . first it was j2EE -->then  javaEE --> thenjakarta EE
+
+Q what is all these let's get a brief peak into history? 
+ . in eariler versions of java must of the enterprise capabilites(like servlet)were initially build into 
+   jdk
+and however they got sepreated out under the umbera of J2EE
+        java EE -- rebranding from j2ee
+        jakarata EE (oracle gave javaEE rights to the eclipes foundation)
+
+
+** in SPring5 - javaEE and in Spring6 +spring boot 3 - jakarta EE
+just javax is switched to jakarta  in all the java.star packages 
