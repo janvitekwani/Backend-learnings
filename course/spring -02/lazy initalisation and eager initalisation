@@ -1,0 +1,28 @@
+default initalisation of spring is -eager
+Eager inititalization is recommended:
+  . errors in config are discovered immediately at application
+     startup
+However , you can configure beans to be lazily initialized
+  using lazy annotation
+   . not recommended(And) not frequently used
+.Lazy annotation 
+   .can be used almost everywhere @Component and @Bean are used
+   . lazy resolution proxy will be injected instead of actual dependency
+   .can be used on Configuration (@Configuration) class:
+      .all @Bean methods within the @Configuration will be lazily initialized
+
+   lazy initalisation is done only when lots of initalisational logic is involved
+
+
+
+     ### COMPARING LAZY INITIALIZATION AND EAGAR INTIALIZATION
+ 
+     heading                                 lazy                               eager
+     inititalization time        bean initialized when it is first           bean initialized at startup of the 
+                                  made use of in the application                     application 
+
+                                      not default                                     default
+
+                                 @Lazy Or Lazy (value=true)                     @Lazy9value=false) Or (absence of @Lazy)
+
+                                 
