@@ -1,0 +1,21 @@
+if u want to do some intilaisation as soon as the constructor is ready 
+then u can make use of the @PostConstruct
+
+what is happening actually in @PostConstruct case ?
+the spring would autowire the dependencies in and as soon it is auto wired 
+the spring will call the method associate with the post construct
+
+
+
+u can also use something which is used before a bean is terminated 
+
+@PreDestory
+
+
+
+where we can use postconstruct  and predestory ?
+if u want to some intialisation logic as soon as dependenies are wired in 
+such as fetch some data from the database then u can use the postconstruct
+
+and u want to do some cleanup before the bean is removed from the container then 
+use the predestory 
