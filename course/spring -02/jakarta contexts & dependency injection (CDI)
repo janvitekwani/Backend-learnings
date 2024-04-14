@@ -1,0 +1,25 @@
+this the specification which is the part of the jakarta EE
+and spring framework supports this CDI specification introduced into javaEE 6 platform in 
+  december 2009
+now called jakarta contexts and dependency injection(CDI)
+
+CDI is a specification (Interface)
+.spring framework implements CDI
+
+important inject API Annotaions in CDI
+  . inject (-autowired in spring)
+   .named (- component in spring)    this is very similar to the their spring
+  .qualifer                                version and these are all supported by the 
+  .scope                                spring
+  .singleton 
+
+** spring framework support cdi means we can implement this by using the spring
+HOW TO USE THESE above ANNOTATIONS >>
+
+ to make use of the CDI u have to add the dependency to our porm.xml 
+<dependency>
+  <groupId> jakarta.inject </groupId>
+  <artifactId> jakarata.inject-api </artifactId>
+  <version> 2.0.1 </version>
+</dependency>
+
