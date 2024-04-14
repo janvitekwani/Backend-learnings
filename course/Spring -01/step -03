@@ -4,10 +4,134 @@ injection in spring beans. their are three types of dependency
 
  1) constructor based: dependencies are set by creating the bean 
                       using its constructor for eg: we did the injection in 
-                                          qualifier using the constructor that
-                                          is constructor based injection
+                                           qualifier using the constructor that
+                                          is constructor based injection      for constructor we donot need autowired annotation
                                           
 2) setter based: dependencies are set by calling setter methods on 
         your beans
 3) feild : no setter or constructor dependency is injected using 
          reflection 
+
+why injection to use
+   constructor injection is preferred injection because the dependency are automatically set when object is created
+
+
+Let's understand each of these with the help of examples
+
+
+*********************************************************************************************
+************************ so this very clean spring context launch ***************************
+
+  package com.onlyjavatech.projectspringboot;
+import java.util.Arrays;
+
+//import javax.swing.text.StyledEditorKit.ForegroundAction;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+//import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+//import com.onlyjavatech.projectspringboot.game.GameRunner;
+//import com.onlyjavatech.projectspringboot.game.Gamingconsole;
+//import com.onlyjavatech.projectspringboot.game.PacmanGame;
+
+
+
+@Configuration
+@ComponentScan   // if u do the compenent scan and donot put the name of the
+   // package in it that means it will scan the current package
+
+public class App03GamingSpringBeans {
+	
+
+
+
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(App03GamingSpringBeans.class)) {
+			
+			
+			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+                  // this will print all the beans     
+			
+
+		}
+	}
+}
+
+output :
+
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.annotation.internalPersistenceAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+app03GamingSpringBeans    // u can see this is also create as bean because this the configuration 
+                          // class right now
+app02HelloWorldSpring
+gameRunner
+pacmanGame
+
+**********************************************************************************************************************I*
+// how let's see the dependency injection in field
+
+@Component    // by using these component the beans are created for each of
+              // these class
+class YourBusinessClass {
+	@Autowired                            // as us are putting the autowired in feild that means it is a field injection
+	Dependency1 dependency1;
+@Autowired
+	Dependency2 dependency2;                // with using the autowired we can injected dependency1 and dependency2 so we will 
+	
+	public String toString() {
+		return "Using" + dependency1+ "and"+ dependency2;
+				                                                // this without autowired on Dependency1 and Dependency2 will give error" Using null and null "
+                                                     were as expected output will be "Using Dependency1 and Dependency2
+                                                  
+	}
+	
+}
+
+
+
+
+@Component
+class Dependency1 {
+	
+}
+
+@Component
+class Dependency2 {
+	
+	
+}
+@Configuration
+@ComponentScan
+public class App03GamingSpringBeans {
+	
+
+
+
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(App03GamingSpringBeans.class)) {
+			
+			
+			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+               
+		System.out.println	(context.getBean(YourBusinessClass.class));
+
+		}
+	}
+}
+
+************************************************* now let try by creating getter and setter for dependency injection *****************************************************
+  first make getter and setter for the class Dependency 1 and Dependency 2 by selecting it right clicking on it and selecting generate getter and setter
+and u have put the autowired mark on getter and setter method
+
