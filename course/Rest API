@@ -1,0 +1,20 @@
+REST APIs is also called RESTFUL APIs
+REST = Representational state transfer
+API = application programming interface
+
+Rest is a set of architectural constraints , not a protocol or a standard.
+API developers can implement REST in a varity of ways
+
+. so hence the REST API is an application programming interface that follows
+  the constraints of REST architectural style and allow for interaction with 
+  RESTful web services
+
+
+
+REST API work on http protocal (this is means whatever operations are accepted by http should be followed by rest api)
+** delivers information using any one of the following formats
+ * JSON (most popular)
+ * text
+ * html
+ * xml 
+ * javascript and more 
