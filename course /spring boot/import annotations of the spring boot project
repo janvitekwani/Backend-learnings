@@ -1,0 +1,8 @@
+@SpringBootApplication = @EnableAutoConfiguration+@ComponentScan + @Configuration 
+
+@ResetController
+@RequestMapping
+@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
