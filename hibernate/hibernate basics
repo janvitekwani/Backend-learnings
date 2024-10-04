@@ -1,0 +1,54 @@
+hibernate is an orm tool :
+hibernate is a java framework that simplifies the development of java application 
+to interact with the database.
+Hibernate is the ORM (object relational mapping ) tool.
+             Q. what do u mean by object relational mapping?
+             A. object - mean to store the data in the database we use the object 
+               and relational database mean we use the table and means one field of the object 
+               will get mapped with the other field of the object , other feild will get mapped with other 
+                feild of the object.
+       
+Hibernate is an open source , lightweight.  
+Hibernate is a non- invasive framework, means it wont't forces the programmers to extend/
+implement any class/interface.  
+Any type of application can build with Hibernate FrameWork  
+
+  
+
+ALL THE CONCEPT OF THE HIBERNATE IS BASED ON PJOS(PLAIN JAVA OBJECT )
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+  TRADITIONAL WAY TO SAVE DATA (JDBC)
+
+
+  
+     when we want to store in my                                   to store the data in database we create table 
+     application then we use to create 
+            obejct
+
+
+                                      and with the help of JDBC we can 
+                                        connect objects and tables 
+                                              together
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  HOW HIBERNATE ROLE COMES INTO PICTURE
+
+                    
+
+       DATA IN OBJECTS                                           TABLE IN DATABASe
+
+                         HIBERNATE ( with the help of hibernate we donot need to write any 
+                                       kind of queries in the hibernate) 
+                                   
+                             - we need to write the database through objects 
+
+
+so in background class get connected with the table in the database by mapping so either you can use xml or u can do mapping though java annotation 
+hibernate is the persistance tool .
+  
+  
