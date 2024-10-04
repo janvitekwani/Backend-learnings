@@ -1,0 +1,33 @@
+first make the maven project and add the mysql dependencies into it 
+now in porm.xml add the mysql connector java 
+and hibernate core dependencies
+
+and now we need to configure the hibernate objects
+so we will create the hibernate.cfg.xml file
+
+Q. What is the need for configuring in the hibernate?
+A.   because our hibernate will communciate with the database take the object from us and then store the 
+    value in the database and then take the values back from the database and give it back to us 
+
+  so we will do the configuration using the xml file . if we really want we can do the configuration using the 
+      java file .  this file should be in scr->main ->java   (means this file is parallel to our  packages)
+  now go to google chrome and search for hibernate dtd  and copy the code from the dtd
+<hibernate-configuration>
+        <session-factory>
+           <property name ="connection.driver_class">com.mysql.jdbc.Driver </property>
+           <property name ="connection.url">jdbc:mysql://localhost:3306/</property>
+            <property name ="connection.username"> root </property>
+            <property name="connection.password"> root </property>
+            <property name ="dialect">org.hibernate.dialect.MYSQLDialect  </property>   // dialect means language if u are using the mysql then mysql dailect , if u are using the postgrues then postgrues dailect
+            <property name ="hbm2ddl.auto"> update </property>    // this will update the pervious table and if u click on create then each time new table will be created 
+            <property name ="show_sql"> true </property>
+          
+        
+</hibernate-configuration>
+        
+         
+        
+      
+
+        
+
