@@ -1,0 +1,35 @@
+       get()                                           load()
+
+get method of hibernate session returns              load() method throws
+null if object is not found in cache as              objectNotFoundEXCEPTION if object is not found
+well as on database                                   on cache as well as on database but never return 
+                                                       null
+
+
+get() involves database hit if object doesn't          load method can return proxy in place and only initialze 
+exists in session Cache and returns a fully             the object or hit the database if any methid other than getId()
+initialized object which may involve several            is called on persistent or entity object . This lazy initialization
+database call                                          increase the performance.
+
+use if u are not sure that objects exits in the         use if u are sure that objects exists
+database or not 
+
+
+
+
+     Let deepy understand how get and load works ?
+session object work as the buffer it take cache memory of the database
+when  u call the get then session object , will come to session cache memory , so it will get the 
+ object from the get () method of the object 
+ let's say u cleared the get memory then it will not get the object in the session object in cache memory
+ then only it will call the database
+
+
+ load() will return a proxy object , but when u will use it inside name , then only it will uses the 
+ database and then it will intialises the database
+ 
+ 
+ 
+     
+     
+       
