@@ -20,7 +20,7 @@ A.   because our hibernate will communciate with the database take the object fr
             <property name="connection.password"> root </property>
             <property name ="dialect">org.hibernate.dialect.MYSQLDialect  </property>   // dialect means language if u are using the mysql then mysql dailect , if u are using the postgrues then postgrues dailect
             <property name ="hbm2ddl.auto"> update </property>    // this will update the pervious table and if u click on create then each time new table will be created 
-            <property name ="show_sql"> true </property>
+            <property name ="show_sql"> true </property> // this will show mysql query
           
         
 </hibernate-configuration>
