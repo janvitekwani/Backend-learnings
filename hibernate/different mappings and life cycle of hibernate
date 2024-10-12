@@ -1,0 +1,25 @@
+onetoonemapping 
+onetomanymapping
+manytomanymapping 
+
+
+let's understand the life cycles of the hibernate
+
+
+   where it is object it has some properties but when we store in database
+   it is stored in the form of tables 
+
+  Now let's understand different stages of objects
+
+      we have two things 1) database 2) session object - this object has various methods , create delete update query 
+      so session object put the object in the database
+
+      we have different states
+
+       Transient                            persistent
+          State                               state
+
+
+         Detached                              Removed 
+            State                                 state           
+     
